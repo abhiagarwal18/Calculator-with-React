@@ -9,7 +9,7 @@ class Button extends Component{
     }
     handleClick(){
         this.props.handleClick(this.props.label)
-    }
+    }   
     render(){
         return(
             <Fragment>
