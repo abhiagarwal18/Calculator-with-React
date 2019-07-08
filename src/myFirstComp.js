@@ -1,7 +1,7 @@
 import React, {Component, Fragment } from "react";
 import Button from "./components/button.js"
 import Display from "./components/display.js"
-const buttons= ["9","8","7","6","5","4","3","2","1","0","+","-","*","/","="]
+const buttons= ["9","8","7","6","5","4","3","2","1","0","+","-","*","/","=","clr"]
 
 class MyFirstComp extends Component{
     constructor (props){
@@ -17,9 +17,14 @@ class MyFirstComp extends Component{
             let oldValue=this.state.displayValue;
             let newValue= eval(oldValue);
             this.setState({displayValue:newValue})
-            
+
         }
-        else {
+        else if(val ==="clr"){
+         let oldValue=this.state.displayValue;
+         let newValue= ""
+         this.setState({displayValue:newValue})   
+        }
+        else    {
         let oldValue = this.state.displayValue;
         let newValue = oldValue+val;
         this.setState({displayValue : newValue});
