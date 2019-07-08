@@ -61,10 +61,10 @@ class MyFirstComp extends Component{
                 {
                     buttons.map((data,i)=>{
                         
-                        return(
-
-                            <Button handleClick={this.changeDisplay}  key={i} label={data}/>
-                        )
+                        return(<Fragment>
+                            {(i%3===0)?  <br/>  : null}
+                            <Button handleClick= {this.changeDisplay} key={i} label={data}/>
+                            </Fragment>)
                     })
                 }
             </Fragment>
