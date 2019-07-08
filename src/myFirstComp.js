@@ -13,10 +13,17 @@ class MyFirstComp extends Component{
     }
 
     changeDisplay=(val)=> {
+        if (val === "="){
+            let oldValue=this.state.displayValue;
+            let newValue= eval(oldValue);
+            this.setState({displayValue:newValue})
+            
+        }
+        else {
         let oldValue = this.state.displayValue;
         let newValue = oldValue+val;
         this.setState({displayValue : newValue});
-        
+        }
     }    
 
 
@@ -48,7 +55,7 @@ class MyFirstComp extends Component{
                 <Display value={this.state.displayValue} />
                 {
                     buttons.map((data,i)=>{
-                       
+                        
                         return(
 
                             <Button handleClick={this.changeDisplay}  key={i} label={data}/>
